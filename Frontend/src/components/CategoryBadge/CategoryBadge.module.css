@@ -1,0 +1,86 @@
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  transition: opacity 0.2s ease;
+}
+
+.badge:hover {
+  opacity: 0.9;
+}
+
+/* Category-specific colors */
+.work {
+  background-color: #3b82f6;
+} /* Blue */
+.personal {
+  background-color: #8b5cf6;
+} /* Purple */
+.home {
+  background-color: #22c55e;
+} /* Green */
+.health {
+  background-color: #10b981;
+} /* Emerald */
+.finance {
+  background-color: #eab308;
+} /* Yellow */
+.shopping {
+  background-color: #ec4899;
+} /* Pink */
+.family {
+  background-color: #6366f1;
+} /* Indigo */
+.social {
+  background-color: #f97316;
+} /* Orange */
+.learning {
+  background-color: #06b6d4;
+} /* Cyan */
+.errands {
+  background-color: #ef4444;
+} /* Red */
+.priority {
+  background-color: #e11d48;
+} /* Rose */
+.weeklyGoals {
+  background-color: #0ea5e9;
+} /* Sky */
+.projects {
+  background-color: #8b5cf6;
+} /* Violet */
+.creative {
+  background-color: #d946ef;
+} /* Fuchsia */
+.admin {
+  background-color: #64748b;
+} /* Slate */
+.travel {
+  background-color: #14b8a6;
+} /* Teal */
+.goals {
+  background-color: #f59e0b;
+} /* Amber */
+.followUp {
+  background-color: #84cc16;
+} /* Lime */
+.review {
+  background-color: #2563eb;
+} /* Darker Blue */
+.miscellaneous {
+  background-color: #6b7280;
+} /* Gray */
+.default {
+  background-color: #9ca3af;
+} /* Default Gray */
+
+/* Media Query for smaller screens */
+@media (max-width: 640px) {
+  .badge {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,54 @@
+/* Filter Panel Container */
+.filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f9fafb; /* Slightly lighter than the main background */
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  color: #1f2937;
+  width: 100%;
+}
+
+/* Filter Title */
+.filter-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+/* Filter Options Container */
+.filter-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Filter Button */
+.filter-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #f3f4f6;
+}
+
+.filter-button.active {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+.button.selected {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border-color: #007bff;
+}
