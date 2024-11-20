@@ -1,0 +1,13 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "Full-stack Todo application",
+  "scripts": {
+    "start": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "build": "cd frontend && npm run build && cd ../backend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
