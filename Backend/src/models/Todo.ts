@@ -36,7 +36,7 @@ const TodoSchema: Schema = new Schema({
   title: { type: String, required: true },
   description: { type: String },
   completed: { type: Boolean, default: false },
-  categories: { type: TodoCategories },
+  categories: { type: String, enum: Object.values(TodoCategories) },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
 });
