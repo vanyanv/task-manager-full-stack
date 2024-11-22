@@ -12,6 +12,14 @@ export const getTodos = async (req: Request, res: Response) => {
   }
 };
 
+//get a single todo
+export const getTodo = async (req: Request, res: Response) => {
+  try {
+  } catch (error) {
+    res.status(500).json({ message: 'Error getting Todo' });
+  }
+};
+
 //create a todos
 export const createTodo = async (req: Request, res: Response) => {
   try {
@@ -32,21 +40,39 @@ export const createTodo = async (req: Request, res: Response) => {
   }
 };
 
-
 //update a todo
-export const updateTodo = async (req: Request, res:Response){
-    try{
+export const updateTodo = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const update = req.body;
+    const todo = await Todo.findByIdAndUpdate(
+      { _id: id },
+      { ...update, updatedAt: Date.now() },
+      { new: true }
+    );
 
-    }catch(error){
-
+    if (!todo) {
+      res.status(401).json({ message: 'Could not update Todo, was not found' });
     }
-}
+
+    res.status(201).json(todo);
+  } catch (error) {
+    res.status(500).json({ message: 'Error Updating Todo' });
+  }
+};
 
 //delete
-export const deleteTodo = async (req: Request, res: Response){
- try{
+export const deleteTodo = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const todo = await Todo.findOneAndDelete({ _id: id });
 
-    }catch(error){
-        
+    if (!todo) {
+      res.status(404).json({ message: 'Could not find and delete Todo' });
     }
-}
+
+    res.status(201).json(todo);
+  } catch (error) {
+    res.status(500).json({ message: 'Error Deleting Todo' });
+  }
+};
