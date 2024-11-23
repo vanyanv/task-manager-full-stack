@@ -8,7 +8,6 @@ export interface Todo {
 }
 
 export interface TodosContextType {
-  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
   todos: Todo[];
   addTodo: (title: string, category: string) => void;
   completeTodo: (id: string) => void;

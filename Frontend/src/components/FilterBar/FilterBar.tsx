@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { useAITaskOrdering } from '../../hooks/useAiTaskOrdering';
-import { useTodos } from '../../hooks/useTodos';
 
 type FilterBarProps = {
   filter: string;
@@ -8,10 +6,8 @@ type FilterBarProps = {
 };
 
 const FilterBar = ({ setFilter, filter }: FilterBarProps) => {
-  const filters = ['All', 'Completed'];
+  const filters = ['All', 'Completed', 'Ai'];
   const [isSelected, setIsSelected] = useState(false);
-  const { orderedTasks, getAIOrderedTasks } = useAITaskOrdering();
-  const { todos, setTodos } = useTodos();
 
   const toggleSelected = () => setIsSelected(!isSelected);
 
@@ -31,17 +27,6 @@ const FilterBar = ({ setFilter, filter }: FilterBarProps) => {
             {currFilter}
           </button>
         ))}
-        <button
-          onClick={() => {
-            console.log(orderedTasks);
-            getAIOrderedTasks(todos);
-            if (orderedTasks.length > 0) {
-              setTodos(orderedTasks);
-            }
-          }}
-        >
-          AI
-        </button>
       </div>
     </div>
   );

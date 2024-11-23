@@ -1,5 +1,5 @@
 // providers/TodosProvider.tsx
-import { useState, ReactNode, useEffect } from 'react';
+import React, { useState, ReactNode, useEffect } from 'react';
 import { TodosContext } from '../context/TodosContext';
 import { Todo } from '../types/todos.types';
 
@@ -77,7 +77,6 @@ export const TodosProvider = ({ children }: TodosProviderProps) => {
   };
 
   const value = {
-    setTodos,
     todos,
     addTodo,
     completeTodo,
