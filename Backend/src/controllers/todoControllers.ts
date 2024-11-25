@@ -15,6 +15,13 @@ export const getTodos = async (req: Request, res: Response) => {
 //get a single todo
 export const getTodo = async (req: Request, res: Response) => {
   try {
+    const { id } = req.params;
+    const todo = await Todo.findById({ _id: id });
+
+    if (!todo) {
+      res.status(401).json({ message: 'Could not find Todo' });
+    }
+    res.status(201).json(todo);
   } catch (error) {
     res.status(500).json({ message: 'Error getting Todo' });
   }
